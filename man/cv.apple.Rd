@@ -9,7 +9,7 @@ Does K-fold cross validation for apple.
 }
 \usage{
 cv.apple(X, y, family="binomial", penalty="LASSO", gamma,  K = 10, 
-alpha, seed = 1, cha.poi = 1, eps = 1e-15, lambda.min.ratio, 
+alpha=0, seed = 1, cha.poi = 1, eps = 1e-15, lambda.min.ratio, 
 max.iter = 100, max.num, n.lambda = 100)
 }
 
@@ -94,8 +94,8 @@ mu=1/(1+exp(-X \%*\% beta-intercept))
 y=rbinom(n,1,mu)
 
 %%%to do cross validation to apple 
-fit.cv=cv.apple(X, y, family='binomial', alpha=0.25, K=5)
+fit.cv=cv.apple(X, y, family="binomial", alpha=0.25, K=5)
 
-%%%
+%%% plot paths
 plot(fit.cv)
 }

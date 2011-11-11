@@ -84,7 +84,7 @@ mu=1/(1+exp(-X \%*\% beta-intercept))
 y=rbinom(n,1,mu)
 	
 %%%fit the model
-fit.apple=apple(X, y, family='binomial')
+fit.apple=apple(X, y, family= "binomial")
 
 %%%plot the path
 plot(fit.apple)

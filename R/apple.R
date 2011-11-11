@@ -224,7 +224,11 @@ apple<-function(X, y, family='binomial', penalty='LASSO', gamma,  cha.poi=1, eps
 
 		
 		lik.list[k+1]=loglik(X=X, y=y, beta=new.beta, family=family)
-		ebic.list[k+1]=ebic(loglik=lik.list[k], beta=new.beta[-(p+1)], n=n, p=p)
+		ebic.list[k+1]=ebic(loglik=lik.list[k+1], beta=new.beta[-(p+1)], n=n, p=p)
+		if(sum(new.beta[-(p+1)]!=0)==0){
+			new.beta[(p+1)] = f.intercept(y, family)
+		}
+		
 		est.beta=cbind(est.beta, new.beta)
 		
 		#break criteria
@@ -256,9 +260,14 @@ apple<-function(X, y, family='binomial', penalty='LASSO', gamma,  cha.poi=1, eps
 	
 	est.beta[-(p+1),]=est.beta[-(p+1),]/normx
 	est.beta[(p+1),]=est.beta[(p+1),]-crossprod(meanx,est.beta[-(p+1),])
+	colnames=c()
+	for(i in 1:dim(est.beta)[2]){
+		colnames[i] = paste('s',i,sep='')
+	}
+	colnames(est.beta) = colnames
 	
-	lambda=lam.list[1:dim(est.beta)[2]]
-	val=list(a0=est.beta[(p+1),], beta=est.beta[-(p+1),], lambda=lambda, ebic=ebic.list, ebic.loc=ebic.loc, family=family)
+	lambda=lam.list[1:(dim(est.beta)[2]-1)]
+	val=list(a0=est.beta[(p+1),-1], beta=est.beta[-(p+1),-1], lambda=lambda, ebic=ebic.list[-1], ebic.loc=ebic.loc, family=family)
 	class(val)='apple'
 	return(val)
 }

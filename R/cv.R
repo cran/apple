@@ -1,4 +1,4 @@
-cv.apple<-function(X,y, family='binomial', penalty='LASSO', gamma, K=10,alpha,seed=1, cha.poi=1, eps=1e-15, lambda.min.ratio, max.iter=100,  max.num, n.lambda=100){
+cv.apple<-function(X,y, family='binomial', penalty='LASSO', gamma, K=10, alpha=0, seed=1, cha.poi=1, eps=1e-15, lambda.min.ratio, max.iter=100,  max.num, n.lambda=100){
 	n<-dim(X)[1]
 	p<-dim(X)[2]
 	

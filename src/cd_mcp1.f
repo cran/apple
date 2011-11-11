@@ -18,7 +18,7 @@
       maxIter = INT(paraIn(2))
       gamma = paraIn(3) 
       epsilon =1e-2
-      print *, paraIn
+      ! print *, paraIn
       do  i = 1, maxIter
 
            blast = beta

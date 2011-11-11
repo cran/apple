@@ -355,4 +355,8 @@ return(list(beta=out$beta, bInd=out$bInd))
 #return(list(beta=out$beta, bInd=out$bInd))		
 #}
 
-
+f.intercept = function(y, family){
+	if(family == 'poisson') intercept = log(mean(y))
+	if(family == 'binomial') intercept = log(mean(y)/(1-mean(y)))
+	return(intercept)
+}
