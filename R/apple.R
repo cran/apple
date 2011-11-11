@@ -49,7 +49,7 @@ apple<-function(X, y, family='binomial', penalty='LASSO', gamma,  cha.poi=1, eps
 	
 	##############main part
 	for(k in 1:(n.lambda-1)){
-		print(k)
+		#print(k)
 		
 		#############used to update and correct
 		new.beta=est.beta[,k]
