@@ -1,0 +1,6 @@
+useDynLib("apple")
+
+export(apple, cv.apple)
+
+S3method("plot","apple")
+S3method("predict","apple")

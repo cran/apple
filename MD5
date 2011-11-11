@@ -1,0 +1,13 @@
+ca87a154d1da65b4f87d21347b722177 *DESCRIPTION
+cd66a1eb029b70f9338e118631b50c7f *NAMESPACE
+2b337f44ee47b5773468959abe812324 *R/apple.R
+728b0ffadac78d0dba0ac262f515ecb3 *R/auxiliary.R
+c558a6bb29ff0c1e99f7a32843468fc8 *R/cv.R
+e096526709c50e21ca5e59b863bc5cf0 *R/plot.R
+31451d034bc3b8def160406d558df7f9 *R/predict.R
+cc515024f968a4b2e8d3a4f2e3414690 *man/apple.Rd
+5c1db8a19a53109950cbbd1da0e1417b *man/cv.apple.Rd
+9cb80d97e67f9b926e49ff65419b1ff9 *man/plot.apple.Rd
+fd8e14de2699cefc97b21dc0a0c69d23 *man/predict.apple.Rd
+296187e4978fdec14db29b0746821b7d *src/cd_lasso1.f
+79c0efdadea5bbf9cec64d72b3305aa0 *src/cd_mcp1.f
